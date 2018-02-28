@@ -13,24 +13,18 @@ import java.util.List;
 @Entity
 @Table(name="usuario")
 @NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
-public class Usuario implements Serializable {
+public class Usuario extends AbstractTimestampEntity{
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date created;
-
 	private String email;
 
 	private String nome;
 
 	private String senha;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date updated;
 
 	private String usuario;
 
@@ -47,14 +41,6 @@ public class Usuario implements Serializable {
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Date getCreated() {
-		return this.created;
-	}
-
-	public void setCreated(Date created) {
-		this.created = created;
 	}
 
 	public String getEmail() {
@@ -79,14 +65,6 @@ public class Usuario implements Serializable {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-
-	public Date getUpdated() {
-		return this.updated;
-	}
-
-	public void setUpdated(Date updated) {
-		this.updated = updated;
 	}
 
 	public String getUsuario() {

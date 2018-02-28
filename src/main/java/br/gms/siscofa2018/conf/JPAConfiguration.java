@@ -23,7 +23,7 @@ public class JPAConfiguration {
 			DataSource dataSource, Properties additionalProperties) {
 		LocalContainerEntityManagerFactoryBean factoryBean = 
 				new LocalContainerEntityManagerFactoryBean();
-		factoryBean.setPackagesToScan("br.com.casadocodigo.loja.models");
+		factoryBean.setPackagesToScan("br.gms.siscofa2018.models");
 		factoryBean.setDataSource(dataSource);
 		
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -48,8 +48,8 @@ public class JPAConfiguration {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
-		dataSource.setPassword("");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/casadocodigo");
+		dataSource.setPassword("soh");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/siscofa");
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		
 		return dataSource;
