@@ -26,7 +26,8 @@ public class BaseCRUDRepository<E> {
 	}
 	
 	public List<E> list() {
-		return manager.createQuery("select distinct(p) from E p", 
+		return manager.createQuery("select distinct(p) from "+ 
+				getClazz().getSimpleName() + " p", 
 				getClazz()).getResultList();
 	}
 

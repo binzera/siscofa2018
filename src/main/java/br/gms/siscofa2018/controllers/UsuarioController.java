@@ -33,7 +33,6 @@ public class UsuarioController {
 	}
 	
 	@RequestMapping(value="/listar" , method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
 	public List<Usuario> listar() {
 		return dao.list();
 	}
