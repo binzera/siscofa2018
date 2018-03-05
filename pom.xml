@@ -14,13 +14,15 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>4.3.1.RELEASE</spring.version>
+	<spring-security.version>4.0.3.RELEASE</spring-security.version>
   </properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>4.1.0.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
@@ -100,7 +102,7 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>4.1.0.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -140,29 +142,29 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
-			<version>4.1.0.RELEASE</version>
+			<version>${spring.version}</version>
 		</dependency>
 		
 		<!-- Spring Security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>4.0.0.M2</version>
+			<version>${spring-security.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
-			<version>4.0.0.M2</version>
+			<version>${spring-security.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>4.0.0.M2</version>
+			<version>${spring-security.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
-			<version>4.0.0.M2</version>
+			<version>${spring-security.version}</version>
 		</dependency>
 		
 		<!-- Testes -->
@@ -175,13 +177,13 @@
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-test</artifactId>
-		    <version>4.1.0.RELEASE</version>
+		    <version>${spring.version}</version>
 		    <scope>test</scope>
 		</dependency>
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
 		    <artifactId>spring-security-test</artifactId>
-		    <version>4.0.0.M2</version>
+		    <version>${spring-security.version}</version>
 		    <scope>test</scope>
 		</dependency>
 		

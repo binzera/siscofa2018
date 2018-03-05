@@ -6,21 +6,26 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.transaction.annotation.Transactional;
+
 public class BaseCRUDRepository<E> {
 	
 	@PersistenceContext
 	protected EntityManager manager;
 
+	@Transactional
 	public E incluir(E entidade) {
 		manager.persist(entidade);
 		return entidade;
 	}
 
+	@Transactional
 	public E alterar(E entidade) {
 		manager.merge(entidade);
 		return entidade;
 	}
 
+	@Transactional
 	public void excluir(E entidade) {
 		manager.remove(entidade);
 	}

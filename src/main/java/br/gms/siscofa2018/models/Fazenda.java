@@ -14,15 +14,12 @@ import java.util.List;
 @Entity
 @Table(name="fazenda")
 @NamedQuery(name="Fazenda.findAll", query="SELECT f FROM Fazenda f")
-public class Fazenda implements Serializable {
+public class Fazenda extends AbstractTimestampEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date created;
 
 	private int excluido;
 
@@ -33,9 +30,6 @@ public class Fazenda implements Serializable {
 
 	@Column(name="total_gado_atual")
 	private int totalGadoAtual;
-
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date updated;
 
 	//bi-directional many-to-one association to Despesa
 	@OneToMany(mappedBy="fazenda")
@@ -68,14 +62,6 @@ public class Fazenda implements Serializable {
 		this.id = id;
 	}
 
-	public Date getCreated() {
-		return this.created;
-	}
-
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-
 	public int getExcluido() {
 		return this.excluido;
 	}
@@ -106,14 +92,6 @@ public class Fazenda implements Serializable {
 
 	public void setTotalGadoAtual(int totalGadoAtual) {
 		this.totalGadoAtual = totalGadoAtual;
-	}
-
-	public Date getUpdated() {
-		return this.updated;
-	}
-
-	public void setUpdated(Date updated) {
-		this.updated = updated;
 	}
 
 	public List<Despesa> getDespesas() {
